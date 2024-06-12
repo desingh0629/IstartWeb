@@ -1,0 +1,25 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Sign in with</h2>
+
+<form method="post" asp-controller="Account" asp-action="Login">
+    <div class="form-group col-md-4">
+        <input type="email" placeholder="Email Address" class="form-control col-md-4" id="Email" name="Email" required />
+    </div>
+    <div class="form-group col-md-4 mt-2">
+        <input type="password" placeholder="Password" class="form-control" id="Password" name="Password" required />
+    </div>
+    <div class="form-check col-md-4 mt-2">
+        <input type="checkbox" class="form-check-input" id="RememberMe">
+        <label class="form-check-label" for="RememberMe">Remember me</label>
+        <a href="#" class="float-right">Forgot password?</a>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+    <div class="text-center mt-3">
+        Don't have an account? <a href="@Url.Action("Register", "Account")" class="text-danger">Register</a>
+    </div>
+</form>
+
